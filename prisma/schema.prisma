@@ -7,4 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Trip {
+  id           String   @id @default(uuid())
+  destination  String
+  created_at   DateTime @default(now())
+  starts_at    DateTime
+  ends_at      DateTime
+  is_confirmed Boolean  @default(false)
 
+  @@map("trips")
+}
