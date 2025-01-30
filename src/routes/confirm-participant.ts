@@ -4,7 +4,7 @@ import { z } from 'zod'
 
 import { prisma } from "../lib/prisma";
 
-export async function confirmParticipant(app: FastifyInstance) {
+export async function confirmParticipants(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get("/participants/:participantId/confirm", {
     schema: {
       params: z.object({
