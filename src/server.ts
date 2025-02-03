@@ -11,6 +11,7 @@ import { getActivities } from './routes/get-activities'
 import { createLink } from './routes/create-link'
 import { getLinks } from './routes/get-links'
 import { createInvite } from './routes/create-invite'
+import { updateTrip } from './routes/update-trip'
 
 
 const app = fastify()
@@ -24,6 +25,7 @@ app.setSerializerCompiler(serializerCompiler)
 
 app.register(createTrip)
 app.register(confirmTrip)
+app.register(updateTrip)
 app.register(confirmParticipants)
 app.register(getParticipants)
 app.register(createInvite)
