@@ -6,7 +6,7 @@ import nodemailer from 'nodemailer';
 
 import { prisma } from '../lib/prisma'
 import { dayjs } from '../lib/dayjs'
-import { getMailClient } from "../lib/mail";
+import { getMailClient } from "../lib/mail"
 
 export async function createTrip(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post('/trips', {

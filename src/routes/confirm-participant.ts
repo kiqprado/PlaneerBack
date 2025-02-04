@@ -34,6 +34,5 @@ export async function confirmParticipants(app: FastifyInstance) {
     })
 
     return reply.redirect(`http://localhost:3000/trips/${participant.trip_id}`)
-  
   })
 }
