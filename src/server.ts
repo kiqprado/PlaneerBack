@@ -1,6 +1,9 @@
+import 'dotenv/config';
 import fastify from 'fastify'
 import cors from '@fastify/cors'
 import { validatorCompiler, serializerCompiler } from 'fastify-type-provider-zod'
+
+import { env } from './env'
 
 import { createTrip } from './routes/create-trip'
 import { confirmTrip } from './routes/confirm-trip'
@@ -47,7 +50,7 @@ app.register(createLink)
 app.register(getLinks)
 
 app.listen({
-  port: 3333
+  port: env.PORT
 }).then(() => {
   console.log('Server running.')
 })
