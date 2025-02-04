@@ -19,6 +19,7 @@ import { getLinks } from './routes/get-links'
 
 import { createInvite } from './routes/create-invite'
 
+import { errorHandler } from './error-handler'
 
 
 const app = fastify()
@@ -29,6 +30,8 @@ app.register(cors, {
 
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
+
+app.setErrorHandler(errorHandler)
 
 app.register(createTrip)
 app.register(confirmTrip)
