@@ -48,7 +48,7 @@ export async function createTrip(app: FastifyInstance) {
         participants: {
           createMany: {
             data: [{
-              name: owner_email,
+              name: owner_name,
               email: owner_email,
               is_owner: true,
               is_confirmed: true,
